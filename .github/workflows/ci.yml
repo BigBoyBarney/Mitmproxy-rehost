@@ -22,14 +22,14 @@ jobs:
 
       - name: Extract mitmproxy
         run: |
-          tar -xzf mitmproxy-12.1.2-linux-x86_64.tar.gz
-          ls -1 mitmproxy-12.1.2-linux-x86_64/* > files.txt
+          tar -xzf mitmproxy.tar.gz
+          ls -1 mitmproxy/* > files.txt
 
       - name: Publish artifacts
         uses: actions/upload-artifact@v4
         with:
           name: mitmproxy-files
           path: |
-            mitmproxy-12.1.2-linux-x86_64/mitmproxy
-            mitmproxy-12.1.2-linux-x86_64/mitmdump
-            mitmproxy-12.1.2-linux-x86_64/mitmweb
+            mitmproxy/mitmproxy
+            mitmproxy/mitmdump
+            mitmproxy/mitmweb
